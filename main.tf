@@ -12,12 +12,12 @@ resource "aws_kms_key" "ssmkey" {
 }
 
 resource "aws_kms_alias" "ssmkey" {
-  name_prefix   = "${var.kms_key_alias}-"
+  name          = "${var.kms_key_alias}-"
   target_key_id = aws_kms_key.ssmkey.key_id
 }
 
 resource "aws_cloudwatch_log_group" "session_manager_log_group" {
-  name_prefix       = "${var.cloudwatch_log_group_name}-"
+  name              = "${var.cloudwatch_log_group_name}-"
   retention_in_days = var.cloudwatch_logs_retention
   kms_key_id        = aws_kms_key.ssmkey.arn
 
