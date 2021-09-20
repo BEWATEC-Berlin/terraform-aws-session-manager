@@ -79,3 +79,8 @@ variable "vpc_endpoints_enabled" {
   type        = bool
   default     = false
 }
+
+variable "region" {
+  type        = string
+  description = "AWS Region"
+}
