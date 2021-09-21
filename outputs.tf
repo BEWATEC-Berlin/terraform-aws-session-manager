@@ -49,3 +49,7 @@ output "vpc_endpoint_logs" {
 output "vpc_endpoint_kms" {
   value = aws_vpc_endpoint.kms.*.id
 }
+
+output "ssm_s3_cwl_policy_arn" {
+  value = aws_iam_policy.ssm_s3_cwl_access.arn
+}

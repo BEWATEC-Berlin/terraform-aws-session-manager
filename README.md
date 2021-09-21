@@ -85,6 +85,7 @@ This module does not create any IAM policies for access to session manager.  To 
 | iam\_role\_arn | n/a |
 | kms\_key\_arn | n/a |
 | session\_logs\_bucket\_name | n/a |
+| ssm\_s3\_cwl\_policy\_arn | n/a |
 | ssm\_security\_group | n/a |
 | vpc\_endpoint\_ec2messages | n/a |
 | vpc\_endpoint\_kms | n/a |
