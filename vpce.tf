@@ -1,6 +1,7 @@
 locals {
   region  = var.vpc_endpoints_enabled && var.vpc_id != null ? split(":", data.aws_vpc.selected[0].arn)[3] : data.aws_region.current.name
-  subnets = var.vpc_endpoints_enabled ? var.subnet_ids != [] ? var.subnet_ids : data.aws_subnet_ids.selected[0].ids : []
+  # subnets = var.vpc_endpoints_enabled ? var.subnet_ids != [] ? var.subnet_ids : data.aws_subnet_ids.selected[0].ids : []
+  subnets = var.subnet_ids
 }
 
 #data "aws_subnet_ids" "selected" {
