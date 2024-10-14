@@ -3,10 +3,10 @@ locals {
   subnets = var.vpc_endpoints_enabled ? var.subnet_ids != [] ? var.subnet_ids : data.aws_subnet_ids.selected[0].ids : []
 }
 
-data "aws_subnet_ids" "selected" {
-  count  = var.vpc_endpoints_enabled ? 1 : 0
-  vpc_id = var.vpc_id
-}
+#data "aws_subnet_ids" "selected" {
+#  count  = var.vpc_endpoints_enabled ? 1 : 0
+#  vpc_id = var.vpc_id
+# }
 
 data "aws_route_table" "selected" {
   count     = var.vpc_endpoints_enabled ? length(local.subnets) : 0
